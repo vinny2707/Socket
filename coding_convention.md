@@ -13,15 +13,6 @@
     #include <vector>
     #include "third_party/lib.h"
     #include "my_project/utils.h"
-- **Viết comment rõ ràng:** Có nghĩa là giải thích tại sao cho code của của mình. Nếu có thể hãy sử dụng comment kiểu Doxygen cho các hàm quan trọng
-    - **Ví dụ:**
-    /*
-    * Calculates the area of a rectangle.
-    * @param width The width of the rectangle.
-    * @param height The height of the rectangle.
-    * @return The area of the rectangle.
-    */
-    int calculateArea(int width, int height);
 - **Không cầm thêm so sánh dư thừa bằng con trỏ**
     - **Ví dụ:**
     if(p) thay vì if(p == nullptr)
