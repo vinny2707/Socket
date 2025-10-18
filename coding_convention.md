@@ -11,8 +11,6 @@
     - **Ví dụ:**
     #include <iostream>
     #include <vector>
-    #include "third_party/lib.h"
-    #include "my_project/utils.h"
 - **Không cầm thêm so sánh dư thừa bằng con trỏ**
     - **Ví dụ:**
     if(p) thay vì if(p == nullptr)
