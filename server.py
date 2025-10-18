@@ -18,7 +18,7 @@ try:
         #     print("Detect client close")
         #     break
         if len(data)> 0:
-            print("Server recv: " + data.decode("utf8"))
+            print("Server chill: " + data.decode("utf8"))
 except KeyboardInterrupt:
     conn.close()
     # s.close()
