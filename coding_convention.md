@@ -7,13 +7,7 @@
         }   
 - **Đặt tên:** Có ý nghĩa với biến, hàm, class. Với hàm sử dụng camelCase, biến sử dụng snake_case, và Class sử dụng PascalCase. Với hàng số sử dụng SCREAMING_SNAKE_CASE
 - **Khi xây dựng Class cần tối ưu hóa phạm vi:** Chỉ để lộ những gì cần thiết trong public, Sử dụng private và protected cho dữ liệu và hàm nội bộ.
-- **Sắp xếp include:** Ưu tiên thứ tự là hệ thống, bên thứ ba, nội bộ dự án
-    - **Ví dụ:**
-    #include <iostream>
-    #include <vector>
-- **Không cầm thêm so sánh dư thừa bằng con trỏ**
-    - **Ví dụ:**
-    if(p) thay vì if(p == nullptr)
+
 - **Ưu tiên pre increment(++i) hơn là post increment(i++)**
 - **Không sử dụng namespace std trong header file hoặc file toàn cục  để tránh xung đột**
 - **Không sử dụng endl**
