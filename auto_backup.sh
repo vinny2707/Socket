@@ -26,7 +26,7 @@ log(){
 
 if [ ! -d "$SOURCE_DIR" ]; then
 	echo "ERROR: Source dir not found!" >&2
-	log "FAIL: Source dir noit found: $SOURCE_DIR"
+	log "FAIL: Source dir not found: $SOURCE_DIR"
 	exit 1
 fi
 
@@ -56,6 +56,7 @@ else
 	ELAPSED=$((END_TIME - START_TIME))
 	echo "ERROR: Compression failure." >&2
 	log "FAIL: Compression failure with $BACKUP_NAME. TIME: $ELAPSED s."
+	exit 1
 fi
 echo "Check number of backups."
 BACKUPS_COUNT=$(ls -1q "$BACKUP_DIR"/backup_*.tar.gz 2>/dev/null | wc -l)
@@ -63,13 +64,13 @@ BACKUPS_COUNT=$(ls -1q "$BACKUP_DIR"/backup_*.tar.gz 2>/dev/null | wc -l)
 if [ "$BACKUPS_COUNT" -gt "$MAX_BACKUP" ]; then
 	DELETE_COUNT=$((BACKUPS_COUNT - MAX_BACKUP))
 	BACKUP_DELETE=$(ls -1t "$BACKUP_DIR"/backup_*.tar.gz | tail -n "+$((MAX_BACKUP + 1))")
-	if [ -n "$BAC KUP_DELETE" ]; then
+	if [ -n "$BACKUP_DELETE" ]; then
 		echo "Delete $DELETE_COUNT backups."
 		echo "$BACKUP_DELETE"
 
 		echo "$BACKUP_DELETE" | xargs -I {} rm -f {}
 
-		if [ $? -eq 0]; then
+		if [ $? -eq 0 ]; then
 			log "INFO: Deleted $DELETE_COUNT old backup."
 		else
 			log "WARNING: Failure to delete old backup."
@@ -82,4 +83,3 @@ fi
 log "FINISH: Backup Completion"
 echo "Finish Process"
 exit 0
-
